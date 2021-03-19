@@ -1,0 +1,102 @@
+<html>
+    <head> <!-- задарасте [голова] -->
+
+    </head>
+    <body> <!-- тело -->
+        <div>
+            <div class="main">
+                <h1> Пожалуйста введите ваши данные</h1>
+                <input id="email" type="text"  oninput="saveEmail(event.target.value)" placeholder="email"> <!-- поле ввода, 
+                    oninput - событие,
+                     saveEmail - функция обработчик
+                     передается в обработчик значение которое пользователь ввел
+                     placeholder - атрибут который отображает юзеру что ввести (подсказка)
+                     -->
+                <input class="cl" type="text"  oninput="savePassword(event.target.value)" placeholder="password">
+                <!-- <input type="button"> -->
+                <button onclick="clicker()">log in</button>
+                <!--
+                    
+                -->
+                <span id="f">текст в строчном теге</span>
+                <p class="cl">параграф</p>
+                <img src="img/art-doroga-ruki-zakat.jpg">
+                <!-- <iframe src="../../aleks/Desktop/rec/daily-2021-03-18_12.02.30[Четверг].mkv"></iframe> -->
+            </div>
+
+            <div class=menu>
+                <button onclick="alert('item 1')">item 1</button>
+                <button>item 2</button>
+                <button>item 3</button>
+            </div>
+            
+        </div>
+    </body>
+
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            display: flex;
+            align-self: center;
+            width: 30%;
+            height: 30px; 
+            /* width: 50vh; */
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: flex;
+            align-self: center;
+            width: max-content;
+            background-color: blue;
+            color: rgb(216, 231, 201);
+            /* border: 1px solid transparent; */
+            border-radius: 5px;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        
+        .cl {
+            color: aqua;
+        }
+    </style>
+
+    <script>
+        
+        const form = {
+            email: '',
+            password: ''    
+        };
+
+        function clicker () {
+            console.log('hello!');
+            console.log('your email: ', form.email);
+            console.log('your email: ', form.password);
+            alert(`hello ${form.email}`)
+            form.age = prompt('ваш возраст?');
+            confirm(`Ты родилась в ${2021 - form.age} году?`);
+        }
+
+        function saveEmail(email) {
+            console.log(email)
+            form.email = email;
+        }
+
+        function savePassword(password) {
+            form.password = password;
+        }
+
+
+    </script>
+</html>
